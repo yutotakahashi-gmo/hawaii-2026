@@ -346,17 +346,19 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
 <script>
 // ---- カウントダウン（往路出発 8/11 21:55 JST） ----
 const target = new Date('2026-08-11T21:55:00+09:00').getTime();
-const dE={d:cd_d,h:cd_h,m:cd_m,s:cd_s};
+const $d=document.getElementById('cd-d'), $h=document.getElementById('cd-h'),
+      $m=document.getElementById('cd-m'), $s=document.getElementById('cd-s');
+let iv;
 function tick(){
   const diff = target - Date.now();
   if(diff<=0){ document.getElementById('cd').style.display='none';
     document.getElementById('cd-msg').style.display='block'; clearInterval(iv); return; }
   const d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5),
         m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
-  cd_d.textContent=d; cd_h.textContent=String(h).padStart(2,'0');
-  cd_m.textContent=String(m).padStart(2,'0'); cd_s.textContent=String(s).padStart(2,'0');
+  $d.textContent=d; $h.textContent=String(h).padStart(2,'0');
+  $m.textContent=String(m).padStart(2,'0'); $s.textContent=String(s).padStart(2,'0');
 }
-tick(); const iv=setInterval(tick,1000);
+tick(); iv=setInterval(tick,1000);
 
 // ---- タブ切替 ----
 document.querySelectorAll('#nav button').forEach(b=>{
