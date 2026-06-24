@@ -34,7 +34,6 @@ body{
   background-attachment:fixed;
 }
 .wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
-/* hero */
 .hero{position:relative;text-align:center;padding:42px 18px 30px}
 .hero .kicker{font-family:"Outfit";font-weight:600;letter-spacing:.32em;
   text-transform:uppercase;font-size:12px;color:var(--teal);opacity:.9}
@@ -49,7 +48,6 @@ body{
 .cd .num{font-family:"Outfit";font-weight:800;font-size:26px;color:var(--teal-deep);line-height:1}
 .cd .lab{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
 .cd-msg{margin-top:14px;font-family:"Outfit";font-weight:700;color:var(--coral);font-size:18px}
-/* nav */
 nav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;
   padding:12px 4px;margin:6px -16px 18px;scrollbar-width:none;
   -webkit-overflow-scrolling:touch}
@@ -62,7 +60,6 @@ nav button{flex:0 0 auto;font-family:"Outfit";font-weight:600;font-size:14px;
 nav button.active{color:#fff;border-color:transparent;
   background:linear-gradient(120deg,var(--teal),var(--aqua));
   box-shadow:0 8px 20px -8px rgba(14,124,134,.7)}
-/* sections */
 section{display:none;animation:fade .5s ease}
 section.show{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -90,7 +87,6 @@ tr.hi td{background:linear-gradient(90deg,rgba(255,138,107,.12),transparent)}
 .badge{display:inline-block;font-family:"Outfit";font-weight:700;font-size:10px;
   padding:2px 8px;border-radius:999px;color:#fff;margin-left:6px;vertical-align:middle}
 .b-live{background:var(--coral)} .b-key{background:var(--teal)}
-/* kv list */
 .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
 .kv dt{color:var(--ink-soft);font-weight:600;white-space:nowrap}
 .kv dd{font-weight:500}
@@ -98,7 +94,6 @@ tr.hi td{background:linear-gradient(90deg,rgba(255,138,107,.12),transparent)}
   font-family:"Outfit"}
 .pill.ok{background:var(--aqua-soft);color:var(--teal-deep)}
 .pill.wait{background:var(--coral-soft);color:#b34a2d}
-/* checklist */
 ul.chk{list-style:none}
 ul.chk li{display:flex;align-items:center;gap:11px;padding:11px 4px;
   border-bottom:1px solid var(--line);cursor:pointer;font-size:15px;transition:.15s}
@@ -113,6 +108,16 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
 .foot{text-align:center;color:var(--ink-soft);font-size:12px;padding:10px 0 4px}
 .privacy{font-size:12px;color:var(--ink-soft);background:var(--aqua-soft);
   border-radius:14px;padding:10px 14px;margin-bottom:16px}
+.mapbox{position:relative;width:100%;padding-bottom:66%;border-radius:18px;
+  overflow:hidden;border:1px solid var(--line)}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.spotgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.spotgrid a{display:flex;align-items:center;gap:8px;text-decoration:none;
+  background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:14px;
+  padding:11px 13px;color:var(--ink);font-weight:500;font-size:13px;transition:.18s}
+.spotgrid a:hover{background:#fff;box-shadow:var(--shadow);transform:translateY(-1px)}
+.spotgrid a .ic{font-size:18px;flex:0 0 auto}
+.spotgrid a small{display:block;color:var(--ink-soft);font-size:11px;font-weight:400}
 </style>
 </head>
 <body>
@@ -133,6 +138,7 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
 
   <nav id="nav">
     <button class="active" data-t="itin">🗓 旅程</button>
+    <button data-t="map">🗺 地図</button>
     <button data-t="flight">✈️ 移動</button>
     <button data-t="hotel">🏨 宿</button>
     <button data-t="food">🍴 食事</button>
@@ -193,6 +199,45 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
         <tr class="hi"><td class="t-ic">✈️</td><td class="t-time">14:10</td><td class="t-plan">NH185 ホノルル発 → 羽田<span class="badge b-key">FLIGHT</span><small>機内泊</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport">HND</a></td></tr>
         <tr><td class="t-ic">🗾</td><td class="t-time">17:25</td><td class="t-plan">羽田着（翌 8/26 夕方）<small>おつかれさま！</small></td><td></td></tr>
       </table>
+    </div>
+  </section>
+
+  <!-- ===================== 地図 ===================== -->
+  <section id="map">
+    <div class="sec-h">🗺 ワイキキ周辺マップ</div>
+    <div class="card">
+      <div class="mapbox">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Waikiki+Beach,Honolulu,HI&z=14&output=embed"
+          title="Waikiki map"></iframe>
+      </div>
+      <div class="note" style="margin-top:10px">ワイキキ中心の地図。下のスポットをタップすると新しいタブでGoogleマップが開きます。</div>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🏖 ビーチ・自然</h2>
+      <div class="spotgrid">
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach"><span class="ic">🏝</span><span>ワイキキビーチ<small>定番のメインビーチ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument"><span class="ic">🌋</span><span>ダイヤモンドヘッド<small>朝の登山・要予約</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanauma+Bay+Nature+Preserve"><span class="ic">🐠</span><span>ハナウマ湾<small>シュノーケル・火曜休</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lanikai+Beach"><span class="ic">🌊</span><span>ラニカイビーチ<small>全米屈指の美ビーチ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kailua+Beach+Park"><span class="ic">🏖</span><span>カイルアビーチ<small>白砂のローカル人気</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tantalus+Lookout+Puu+Ualakaa+State+Park"><span class="ic">🌃</span><span>タンタラスの丘<small>ホノルル夜景</small></span></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🛍 街・観光</h2>
+      <div class="spotgrid">
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ala+Moana+Center"><span class="ic">🛍</span><span>アラモアナセンター<small>巨大ショッピング</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Walk"><span class="ic">🛒</span><span>ワイキキビーチウォーク<small>お土産・カフェ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pearl+Harbor+National+Memorial"><span class="ic">⚓</span><span>パールハーバー<small>歴史・要予約</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Iolani+Palace+Honolulu"><span class="ic">🏛</span><span>イオラニ宮殿<small>米国唯一の王宮</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honolulu+Zoo"><span class="ic">🦁</span><span>ホノルル動物園</span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Aquarium"><span class="ic">🐡</span><span>ワイキキ水族館</span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haleiwa+Town+North+Shore+Oahu"><span class="ic">🍤</span><span>ノースショア / ハレイワ<small>ガーリックシュリンプ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=KCC+Farmers+Market+Honolulu"><span class="ic">🥭</span><span>KCCファーマーズ<small>土曜の朝市</small></span></a>
+      </div>
     </div>
   </section>
 
