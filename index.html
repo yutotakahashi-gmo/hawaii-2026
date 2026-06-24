@@ -121,6 +121,8 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
 .spotgrid a .ic{width:20px;height:20px;flex:0 0 auto;
   background:var(--gpin) center/contain no-repeat}
 .spotgrid a small{display:block;color:var(--ink-soft);font-size:11px;font-weight:400}
+.navpin{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:4px;
+  background:var(--gpin) center/contain no-repeat}
 </style>
 </head>
 <body>
@@ -141,7 +143,7 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
 
   <nav id="nav">
     <button class="active" data-t="itin">🗓 旅程</button>
-    <button data-t="map">🗺 地図</button>
+    <button data-t="map"><span class="navpin"></span>地図</button>
     <button data-t="flight">✈️ 移動</button>
     <button data-t="hotel">🏨 宿</button>
     <button data-t="food">🍴 食事</button>
