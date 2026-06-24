@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hawaii 2026 🌺</title>
+<meta name="theme-color" content="#0e7c86">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hawaii 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0e7c86; --teal-deep:#075863; --aqua:#56c6c9; --aqua-soft:#d6f3f2;
+  --coral:#ff8a6b; --coral-soft:#ffd9cc; --sand:#ffe9c7; --sky:#cfeefb;
+  --ink:#0f3d44; --ink-soft:#5a7d83; --line:rgba(14,124,134,.16);
+  --card:rgba(255,255,255,.74); --shadow:0 12px 42px -12px rgba(7,88,99,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Maru Gothic",system-ui,sans-serif;color:var(--ink);
+  min-height:100vh;line-height:1.6;
+  background:
+    radial-gradient(1200px 700px at 8% -8%, var(--sand), transparent 55%),
+    radial-gradient(900px 600px at 105% 0%, var(--coral-soft), transparent 50%),
+    radial-gradient(1000px 800px at 50% 120%, var(--aqua-soft), transparent 55%),
+    linear-gradient(160deg,#eafafa 0%, #f4fbff 50%, #fff4ea 100%);
+  background-attachment:fixed;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+/* hero */
+.hero{position:relative;text-align:center;padding:42px 18px 30px}
+.hero .kicker{font-family:"Outfit";font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;font-size:12px;color:var(--teal);opacity:.9}
+.hero h1{font-family:"Outfit";font-weight:800;font-size:clamp(38px,11vw,66px);
+  line-height:1;margin:8px 0 6px;
+  background:linear-gradient(105deg,var(--teal-deep),var(--aqua) 55%,var(--coral));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:var(--ink-soft);font-weight:500;font-size:15px}
+.cd{display:flex;justify-content:center;gap:8px;margin-top:18px;flex-wrap:wrap}
+.cd .box{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--line);
+  border-radius:18px;padding:10px 14px;min-width:66px;box-shadow:var(--shadow)}
+.cd .num{font-family:"Outfit";font-weight:800;font-size:26px;color:var(--teal-deep);line-height:1}
+.cd .lab{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+.cd-msg{margin-top:14px;font-family:"Outfit";font-weight:700;color:var(--coral);font-size:18px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;
+  padding:12px 4px;margin:6px -16px 18px;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav::before,nav::after{content:"";padding-left:12px}
+nav button{flex:0 0 auto;font-family:"Outfit";font-weight:600;font-size:14px;
+  border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(10px);
+  color:var(--ink-soft);padding:9px 15px;border-radius:999px;cursor:pointer;
+  transition:.25s;white-space:nowrap}
+nav button.active{color:#fff;border-color:transparent;
+  background:linear-gradient(120deg,var(--teal),var(--aqua));
+  box-shadow:0 8px 20px -8px rgba(14,124,134,.7)}
+/* sections */
+section{display:none;animation:fade .5s ease}
+section.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.card{background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--line);
+  border-radius:24px;padding:18px;margin-bottom:18px;box-shadow:var(--shadow)}
+h2.day{font-family:"Outfit";font-weight:800;font-size:19px;color:var(--teal-deep);
+  margin-bottom:4px;display:flex;align-items:center;gap:9px}
+h2.day .date{font-size:13px;color:var(--ink-soft);font-weight:600}
+.note{font-size:13px;color:var(--ink-soft);margin-bottom:12px}
+.sec-h{font-family:"Outfit";font-weight:800;font-size:22px;color:var(--teal-deep);
+  margin:6px 4px 14px;display:flex;align-items:center;gap:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:9px 6px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+th{font-family:"Outfit";font-weight:600;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft)}
+.t-ic{width:30px;font-size:17px;text-align:center}
+.t-time{width:56px;font-family:"Outfit";font-weight:700;color:var(--teal);white-space:nowrap}
+.t-plan{font-weight:500}
+.t-plan small{display:block;color:var(--ink-soft);font-size:12px;font-weight:400;margin-top:1px}
+a.spot{display:inline-flex;align-items:center;gap:3px;color:var(--coral);
+  text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+a.spot::before{content:"📍";font-size:11px}
+tr.hi td{background:linear-gradient(90deg,rgba(255,138,107,.12),transparent)}
+.badge{display:inline-block;font-family:"Outfit";font-weight:700;font-size:10px;
+  padding:2px 8px;border-radius:999px;color:#fff;margin-left:6px;vertical-align:middle}
+.b-live{background:var(--coral)} .b-key{background:var(--teal)}
+/* kv list */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--ink-soft);font-weight:600;white-space:nowrap}
+.kv dd{font-weight:500}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;
+  font-family:"Outfit"}
+.pill.ok{background:var(--aqua-soft);color:var(--teal-deep)}
+.pill.wait{background:var(--coral-soft);color:#b34a2d}
+/* checklist */
+ul.chk{list-style:none}
+ul.chk li{display:flex;align-items:center;gap:11px;padding:11px 4px;
+  border-bottom:1px solid var(--line);cursor:pointer;font-size:15px;transition:.15s}
+ul.chk li:last-child{border-bottom:none}
+ul.chk li .bx{width:23px;height:23px;border-radius:8px;border:2px solid var(--aqua);
+  flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:14px;transition:.2s}
+ul.chk li.done .bx{background:var(--teal);border-color:var(--teal)}
+ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
+.cost-total td{font-family:"Outfit";font-weight:800;color:var(--teal-deep);font-size:15px;
+  border-top:2px solid var(--line)}
+.foot{text-align:center;color:var(--ink-soft);font-size:12px;padding:10px 0 4px}
+.privacy{font-size:12px;color:var(--ink-soft);background:var(--aqua-soft);
+  border-radius:14px;padding:10px 14px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Aloha · 5 travelers</div>
+    <h1>Hawaii 2026</h1>
+    <div class="sub">🌺 Oahu · Waikiki ｜ 8/11 → 8/25 ｜ Emi · Ikuo · Maki · Yuto · Reika</div>
+    <div class="cd" id="cd">
+      <div class="box"><div class="num" id="cd-d">–</div><div class="lab">Days</div></div>
+      <div class="box"><div class="num" id="cd-h">–</div><div class="lab">Hours</div></div>
+      <div class="box"><div class="num" id="cd-m">–</div><div class="lab">Min</div></div>
+      <div class="box"><div class="num" id="cd-s">–</div><div class="lab">Sec</div></div>
+    </div>
+    <div class="cd-msg" id="cd-msg" style="display:none">🌴 ハワイ到着！Have fun!</div>
+  </header>
+
+  <nav id="nav">
+    <button class="active" data-t="itin">🗓 旅程</button>
+    <button data-t="flight">✈️ 移動</button>
+    <button data-t="hotel">🏨 宿</button>
+    <button data-t="food">🍴 食事</button>
+    <button data-t="esta">🛂 ESTA</button>
+    <button data-t="cost">💳 費用</button>
+    <button data-t="todo">✅ 持ち物</button>
+  </nav>
+
+  <!-- ===================== 旅程 ===================== -->
+  <section id="itin" class="show">
+    <div class="privacy">この旅程は概要です。スポット名タップでGoogleマップが開きます。自由日のプランは追記してください。</div>
+
+    <div class="card">
+      <h2 class="day">🛫 DAY 1 <span class="date">8/11 (火) 出発・到着日</span></h2>
+      <table>
+        <tr><td class="t-ic">🚆</td><td class="t-time">夕方</td><td class="t-plan">羽田空港へ<small>国際線ターミナル・3時間前集合めやす</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+3">羽田T3</a></td></tr>
+        <tr class="hi"><td class="t-ic">✈️</td><td class="t-time">21:55</td><td class="t-plan">DL180 羽田発 → ホノルル<span class="badge b-key">FLIGHT</span><small>Delta Main Classic ／ 約7時間</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Daniel+K+Inouye+International+Airport">HNL</a></td></tr>
+        <tr><td class="t-ic">🛬</td><td class="t-time">10:45</td><td class="t-plan">ホノルル着（同日 8/11 午前）<small>入国審査 → 荷物 → 移動</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honolulu+Airport">HNL</a></td></tr>
+        <tr><td class="t-ic">🏠</td><td class="t-time">昼</td><td class="t-plan">前半ステイ チェックイン<small>Waikiki Ocean View Studio（Ala Moana Blvd）</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=1777+Ala+Moana+Blvd+Honolulu+HI+96815">宿</a></td></tr>
+        <tr><td class="t-ic">🌅</td><td class="t-time">夕</td><td class="t-plan">ワイキキビーチで初日のんびり<small>サンセット＆軽め夕食</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach">ビーチ</a></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🌞 DAY 2–7 <span class="date">8/12 (水) – 8/17 (日) 前半フリー</span></h2>
+      <div class="note">前半ステイ拠点で自由行動。おすすめ候補（行ったら追記）↓</div>
+      <table>
+        <tr><td class="t-ic">🐢</td><td class="t-time"></td><td class="t-plan">ハナウマ湾でシュノーケル<small>火曜定休・要予約</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanauma+Bay">候補</a></td></tr>
+        <tr><td class="t-ic">🥾</td><td class="t-time"></td><td class="t-plan">ダイヤモンドヘッド登山<small>朝の涼しい時間に・要予約</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument">候補</a></td></tr>
+        <tr><td class="t-ic">🛍</td><td class="t-time"></td><td class="t-plan">アラモアナセンターで買い物</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ala+Moana+Center">候補</a></td></tr>
+        <tr><td class="t-ic">🍤</td><td class="t-time"></td><td class="t-plan">ノースショア ドライブ（ガーリックシュリンプ）</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haleiwa+North+Shore+Oahu">候補</a></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🏨 DAY 8 <span class="date">8/18 (火) 後半ステイへ移動</span></h2>
+      <table>
+        <tr><td class="t-ic">🧳</td><td class="t-time">11:00</td><td class="t-plan">前半ステイ チェックアウト</td><td></td></tr>
+        <tr class="hi"><td class="t-ic">🏨</td><td class="t-time">15:00</td><td class="t-plan">Park Shore Waikiki チェックイン<span class="badge b-key">HOTEL</span><small>2部屋 ／ Kalakaua Ave</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Park+Shore+Waikiki+2586+Kalakaua+Ave+Honolulu">ホテル</a></td></tr>
+        <tr><td class="t-ic">🌊</td><td class="t-time">夕</td><td class="t-plan">クヒオビーチ・水族館側を散策</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Aquarium">候補</a></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🌴 DAY 9–14 <span class="date">8/19 (水) – 8/24 (月) 後半フリー</span></h2>
+      <div class="note">後半ステイ拠点で自由行動。やりたいことを追記↓</div>
+      <table>
+        <tr><td class="t-ic">⛵</td><td class="t-time"></td><td class="t-plan">サンセットクルーズ / ディナー</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kewalo+Basin+Harbor+Honolulu">候補</a></td></tr>
+        <tr><td class="t-ic">🌺</td><td class="t-time"></td><td class="t-plan">カイルア / ラニカイビーチ</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lanikai+Beach">候補</a></td></tr>
+        <tr><td class="t-ic">🎁</td><td class="t-time"></td><td class="t-plan">お土産まとめ買い（最終調整）</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Walk">候補</a></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 class="day">🛬 DAY 15 <span class="date">8/25 (火) 帰国日</span></h2>
+      <table>
+        <tr><td class="t-ic">🧳</td><td class="t-time">11:00</td><td class="t-plan">Park Shore Waikiki チェックアウト<small>空港へ・3時間前めやす</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Daniel+K+Inouye+International+Airport">HNL</a></td></tr>
+        <tr class="hi"><td class="t-ic">✈️</td><td class="t-time">14:10</td><td class="t-plan">NH185 ホノルル発 → 羽田<span class="badge b-key">FLIGHT</span><small>機内泊</small></td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport">HND</a></td></tr>
+        <tr><td class="t-ic">🗾</td><td class="t-time">17:25</td><td class="t-plan">羽田着（翌 8/26 夕方）<small>おつかれさま！</small></td><td></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 移動 ===================== -->
+  <section id="flight">
+    <div class="sec-h">✈️ 移動・フライト</div>
+    <div class="card">
+      <h2 class="day">往路 <span class="date">8/11 (火)</span></h2>
+      <dl class="kv">
+        <dt>便名</dt><dd>DL180（Delta Main Classic）</dd>
+        <dt>区間</dt><dd>東京 羽田 (HND) → ホノルル (HNL)</dd>
+        <dt>時刻</dt><dd>21:55 発 → 10:45 着（同日 8/11 午前）</dd>
+        <dt>座席</dt><dd>Yuto 43F ／ Emi 43G ほか</dd>
+        <dt>備考</dt><dd>ANA NH184 とのコードシェア便</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h2 class="day">復路 <span class="date">8/25 (火)</span></h2>
+      <dl class="kv">
+        <dt>便名</dt><dd>NH185（ANA）</dd>
+        <dt>区間</dt><dd>ホノルル (HNL) → 東京 羽田 (HND)</dd>
+        <dt>時刻</dt><dd>14:10 発 → 17:25 着（翌 8/26）</dd>
+        <dt>クラス</dt><dd>エコノミー <span class="pill ok">確定</span></dd>
+      </dl>
+    </div>
+    <div class="card">
+      <div class="note">⚠️ 予約番号・航空券番号・パスポート番号などは公開版から除外しています。確認は各社アプリ／メールから。</div>
+      <dl class="kv">
+        <dt>ANA確認</dt><dd><a class="spot" target="_blank" href="https://aswbe.ana.co.jp/">ANA予約確認 ↗</a></dd>
+        <dt>Delta確認</dt><dd><a class="spot" target="_blank" href="https://www.delta.com/">Fly Delta / My Trips ↗</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===================== 宿 ===================== -->
+  <section id="hotel">
+    <div class="sec-h">🏨 宿泊</div>
+    <div class="card">
+      <h2 class="day">前半 <span class="date">8/11 → 8/18</span></h2>
+      <dl class="kv">
+        <dt>宿</dt><dd>Waikiki Ocean View Studio（Vrbo）</dd>
+        <dt>住所</dt><dd>1777 Ala Moana Blvd #1006, Honolulu, HI 96815</dd>
+        <dt>特徴</dt><dd>オーシャンビュー・ビーチ＆ショッピング徒歩圏</dd>
+        <dt>地図</dt><dd><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=1777+Ala+Moana+Blvd+Honolulu+HI+96815">Googleマップ ↗</a></dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h2 class="day">後半 <span class="date">8/18 → 8/25</span></h2>
+      <dl class="kv">
+        <dt>ホテル</dt><dd>Park Shore Waikiki</dd>
+        <dt>住所</dt><dd>2586 Kalakaua Ave, Honolulu, HI 96815</dd>
+        <dt>IN / OUT</dt><dd>8/18 15:00 イン ／ 8/25 11:00 アウト</dd>
+        <dt>部屋</dt><dd>2部屋で予約</dd>
+        <dt>地図</dt><dd><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Park+Shore+Waikiki+2586+Kalakaua+Ave+Honolulu">Googleマップ ↗</a></dd>
+      </dl>
+    </div>
+    <div class="card"><div class="note">⚠️ 予約番号（Vrbo / Expedia 旅程番号）は公開版から除外。予約アプリで確認を。</div></div>
+  </section>
+
+  <!-- ===================== 食事 ===================== -->
+  <section id="food">
+    <div class="sec-h">🍴 食事メモ</div>
+    <div class="card">
+      <table>
+        <tr><th>店</th><th>ジャンル</th><th>地図</th></tr>
+        <tr><td class="t-plan">Marugame Udon Waikiki<small>行列必至・コスパ◎</small></td><td>うどん</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Marugame+Udon+Waikiki">地図</a></td></tr>
+        <tr><td class="t-plan">Rainbow Drive-In<small>ロコモコ</small></td><td>ローカル</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Rainbow+Drive-In+Honolulu">地図</a></td></tr>
+        <tr><td class="t-plan">Eggs 'n Things<small>朝・パンケーキ</small></td><td>朝食</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Eggs+n+Things+Waikiki">地図</a></td></tr>
+        <tr><td class="t-plan">Leonard's Bakery<small>マラサダ</small></td><td>スイーツ</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Leonards+Bakery+Honolulu">地図</a></td></tr>
+        <tr><td class="t-plan">Foodland / ABC Store<small>ポケ・買い出し</small></td><td>スーパー</td><td><a class="spot" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Foodland+Farms+Ala+Moana">地図</a></td></tr>
+      </table>
+      <div class="note" style="margin-top:12px">行ったお店・予約は追記してください。5人なので予約推奨。</div>
+    </div>
+  </section>
+
+  <!-- ===================== ESTA ===================== -->
+  <section id="esta">
+    <div class="sec-h">🛂 ESTA チェック</div>
+    <div class="card">
+      <div class="privacy">米国入国には有効な <b>ESTA</b>（電子渡航認証）が必須。2年間有効・$21。出発の <b>72時間前まで</b>に申請完了を。各自の承認状況をチェック ↓（端末に保存されます）</div>
+      <ul class="chk" data-key="esta">
+        <li><span class="bx">✓</span><span class="tx">Emi — ESTA 申請・承認済み</span></li>
+        <li><span class="bx">✓</span><span class="tx">Ikuo — ESTA 申請・承認済み</span></li>
+        <li><span class="bx">✓</span><span class="tx">Maki — ESTA 申請・承認済み</span></li>
+        <li><span class="bx">✓</span><span class="tx">Yuto — ESTA 申請・承認済み</span></li>
+        <li><span class="bx">✓</span><span class="tx">Reika — ESTA 申請・承認済み</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2 class="day">確認ポイント</h2>
+      <ul class="chk" data-key="esta-check">
+        <li><span class="bx">✓</span><span class="tx">パスポート残存期間 OK（帰国時+α）</span></li>
+        <li><span class="bx">✓</span><span class="tx">ESTA有効期限が旅行日をカバー</span></li>
+        <li><span class="bx">✓</span><span class="tx">パスポート番号とESTAの紐づけ一致</span></li>
+        <li><span class="bx">✓</span><span class="tx">承認画面/番号を各自スクショ保存</span></li>
+      </ul>
+      <div class="note" style="margin-top:10px">公式サイト → <a class="spot" target="_blank" href="https://esta.cbp.dhs.gov/">esta.cbp.dhs.gov ↗</a>（偽サイト注意・必ず公式で）</div>
+      <div class="note">⚠️ ESTA申請番号・パスポート番号は公開版に載せていません。各自で管理を。</div>
+    </div>
+  </section>
+
+  <!-- ===================== 費用 ===================== -->
+  <section id="cost">
+    <div class="sec-h">💳 費用メモ</div>
+    <div class="card">
+      <table>
+        <tr><th>項目</th><th>金額</th><th>状況</th></tr>
+        <tr><td class="t-plan">往路 航空券（立替分）<small>2026/3/13 精算予定</small></td><td>¥68,630</td><td><span class="pill ok">支払済</span></td></tr>
+        <tr><td class="t-plan">復路 ANA特典航空券<small>52,500マイル + 諸税</small></td><td>¥45,770</td><td><span class="pill ok">手配済</span></td></tr>
+        <tr><td class="t-plan">前半ステイ（Vrbo）</td><td>—</td><td><span class="pill ok">予約済</span></td></tr>
+        <tr><td class="t-plan">後半ホテル（Park Shore・2部屋）</td><td>—</td><td><span class="pill ok">予約済</span></td></tr>
+        <tr><td class="t-plan">ESTA（$21 / 人）</td><td>5名分</td><td><span class="pill ok">取得済</span></td></tr>
+        <tr><td class="t-plan">現地費用（食事・観光・お土産）</td><td>各自</td><td><span class="pill wait">これから</span></td></tr>
+      </table>
+      <div class="note" style="margin-top:10px">金額は概算。カード番号など機微情報は記載していません。</div>
+    </div>
+  </section>
+
+  <!-- ===================== 持ち物 ===================== -->
+  <section id="todo">
+    <div class="sec-h">✅ 持ち物チェック</div>
+    <div class="card">
+      <h2 class="day">必携</h2>
+      <ul class="chk" data-key="todo-must">
+        <li><span class="bx">✓</span><span class="tx">パスポート（全員）</span></li>
+        <li><span class="bx">✓</span><span class="tx">ESTA承認のスクショ</span></li>
+        <li><span class="bx">✓</span><span class="tx">航空券 / 予約確認（アプリ）</span></li>
+        <li><span class="bx">✓</span><span class="tx">クレジットカード・現金（USD）</span></li>
+        <li><span class="bx">✓</span><span class="tx">スマホ・充電器・モバイルバッテリー</span></li>
+        <li><span class="bx">✓</span><span class="tx">変換プラグ（米国Aタイプ）</span></li>
+        <li><span class="bx">✓</span><span class="tx">海外旅行保険の控え</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2 class="day">ビーチ・常備</h2>
+      <ul class="chk" data-key="todo-beach">
+        <li><span class="bx">✓</span><span class="tx">日焼け止め（リーフセーフ）</span></li>
+        <li><span class="bx">✓</span><span class="tx">サングラス・帽子</span></li>
+        <li><span class="bx">✓</span><span class="tx">水着・ラッシュガード</span></li>
+        <li><span class="bx">✓</span><span class="tx">ビーチサンダル</span></li>
+        <li><span class="bx">✓</span><span class="tx">エコバッグ（買い物用）</span></li>
+        <li><span class="bx">✓</span><span class="tx">常備薬・絆創膏</span></li>
+        <li><span class="bx">✓</span><span class="tx">羽織り（冷房・機内用）</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot">🌺 Mahalo · Hawaii 2026 · 5 travelers 🌺</div>
+</div>
+
+<script>
+// ---- カウントダウン（往路出発 8/11 21:55 JST） ----
+const target = new Date('2026-08-11T21:55:00+09:00').getTime();
+const dE={d:cd_d,h:cd_h,m:cd_m,s:cd_s};
+function tick(){
+  const diff = target - Date.now();
+  if(diff<=0){ document.getElementById('cd').style.display='none';
+    document.getElementById('cd-msg').style.display='block'; clearInterval(iv); return; }
+  const d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5),
+        m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
+  cd_d.textContent=d; cd_h.textContent=String(h).padStart(2,'0');
+  cd_m.textContent=String(m).padStart(2,'0'); cd_s.textContent=String(s).padStart(2,'0');
+}
+tick(); const iv=setInterval(tick,1000);
+
+// ---- タブ切替 ----
+document.querySelectorAll('#nav button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('section').forEach(s=>s.classList.remove('show'));
+    document.getElementById(b.dataset.t).classList.add('show');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+// ---- チェックリスト（localStorage保存） ----
+document.querySelectorAll('ul.chk').forEach(ul=>{
+  const key='hi2026:'+ul.dataset.key;
+  let saved={};
+  try{ saved=JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
+  [...ul.children].forEach((li,i)=>{
+    if(saved[i]) li.classList.add('done');
+    li.addEventListener('click',()=>{
+      li.classList.toggle('done');
+      const st={}; [...ul.children].forEach((x,j)=>{ if(x.classList.contains('done')) st[j]=1; });
+      localStorage.setItem(key,JSON.stringify(st));
+    });
+  });
+});
+</script>
+</body>
+</html>
