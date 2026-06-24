@@ -20,6 +20,7 @@
   --coral:#ff8a6b; --coral-soft:#ffd9cc; --sand:#ffe9c7; --sky:#cfeefb;
   --ink:#0f3d44; --ink-soft:#5a7d83; --line:rgba(14,124,134,.16);
   --card:rgba(255,255,255,.74); --shadow:0 12px 42px -12px rgba(7,88,99,.38);
+  --gpin:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23EA4335' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z'/%3E%3Ccircle cx='12' cy='9' r='2.6' fill='%23fff'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -82,7 +83,8 @@ th{font-family:"Outfit";font-weight:600;font-size:11px;letter-spacing:.08em;
 .t-plan small{display:block;color:var(--ink-soft);font-size:12px;font-weight:400;margin-top:1px}
 a.spot{display:inline-flex;align-items:center;gap:3px;color:var(--coral);
   text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
-a.spot::before{content:"📍";font-size:11px}
+a.spot::before{content:"";width:14px;height:14px;flex:0 0 auto;
+  background:var(--gpin) center/contain no-repeat}
 tr.hi td{background:linear-gradient(90deg,rgba(255,138,107,.12),transparent)}
 .badge{display:inline-block;font-family:"Outfit";font-weight:700;font-size:10px;
   padding:2px 8px;border-radius:999px;color:#fff;margin-left:6px;vertical-align:middle}
@@ -116,7 +118,8 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
   background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:14px;
   padding:11px 13px;color:var(--ink);font-weight:500;font-size:13px;transition:.18s}
 .spotgrid a:hover{background:#fff;box-shadow:var(--shadow);transform:translateY(-1px)}
-.spotgrid a .ic{font-size:18px;flex:0 0 auto}
+.spotgrid a .ic{width:20px;height:20px;flex:0 0 auto;
+  background:var(--gpin) center/contain no-repeat}
 .spotgrid a small{display:block;color:var(--ink-soft);font-size:11px;font-weight:400}
 </style>
 </head>
@@ -217,43 +220,49 @@ ul.chk li.done .tx{text-decoration:line-through;color:var(--ink-soft)}
     <div class="card">
       <h2 class="day">🏖 ビーチ・自然</h2>
       <div class="spotgrid">
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach"><span class="ic">🏝</span><span>ワイキキビーチ<small>定番のメインビーチ</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument"><span class="ic">🌋</span><span>ダイヤモンドヘッド<small>朝の登山・要予約</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanauma+Bay+Nature+Preserve"><span class="ic">🐠</span><span>ハナウマ湾<small>シュノーケル・火曜休</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lanikai+Beach"><span class="ic">🌊</span><span>ラニカイビーチ<small>全米屈指の美ビーチ</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kailua+Beach+Park"><span class="ic">🏖</span><span>カイルアビーチ<small>白砂のローカル人気</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Makapuu+Point+Lighthouse+Trail"><span class="ic">🚦</span><span>マカプウ岬灯台<small>絶景ハイキング</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Halona+Blowhole+Lookout"><span class="ic">🌊</span><span>ハロナ潮吹き穴<small>ドライブ途中の名所</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tantalus+Lookout+Puu+Ualakaa+State+Park"><span class="ic">🌃</span><span>タンタラスの丘<small>ホノルル夜景</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach"><span class="ic"></span><span>ワイキキビーチ<small>定番のメインビーチ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument"><span class="ic"></span><span>ダイヤモンドヘッド<small>朝の登山・要予約</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanauma+Bay+Nature+Preserve"><span class="ic"></span><span>ハナウマ湾<small>シュノーケル・火曜休</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lanikai+Beach"><span class="ic"></span><span>ラニカイビーチ<small>全米屈指の美ビーチ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kailua+Beach+Park"><span class="ic"></span><span>カイルアビーチ<small>白砂のローカル人気</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Koko+Crater+Railway+Trail+Honolulu"><span class="ic"></span><span>ココヘッド登山<small>急階段・絶景／96825</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Koko+Crater+Botanical+Garden"><span class="ic"></span><span>ココクレーター植物園<small>サボテン群生</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Manoa+Falls+Trail"><span class="ic"></span><span>マノアの滝<small>緑のトレイル</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Nuuanu+Pali+Lookout"><span class="ic"></span><span>ヌウアヌ・パリ展望台<small>強風の絶景</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Byodo-In+Temple+Kaneohe"><span class="ic"></span><span>平等院<small>緑に映える寺院</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Makapuu+Point+Lighthouse+Trail"><span class="ic"></span><span>マカプウ岬灯台<small>絶景ハイキング</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Halona+Blowhole+Lookout"><span class="ic"></span><span>ハロナ潮吹き穴<small>ドライブ名所</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Sandy+Beach+Park+Honolulu"><span class="ic"></span><span>サンディビーチ<small>ボディボード／96825</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tantalus+Lookout+Puu+Ualakaa+State+Park"><span class="ic"></span><span>タンタラスの丘<small>ホノルル夜景</small></span></a>
       </div>
     </div>
 
     <div class="card">
       <h2 class="day">🏛 観光・カルチャー</h2>
       <div class="spotgrid">
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=USS+Arizona+Memorial+Pearl+Harbor"><span class="ic">⚓</span><span>USS アリゾナ記念館<small>パールハーバー・要予約</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Battleship+Missouri+Memorial"><span class="ic">🚢</span><span>戦艦ミズーリ記念館<small>降伏調印の地</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pearl+Harbor+Aviation+Museum"><span class="ic">✈️</span><span>太平洋航空博物館<small>パールハーバー</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Iolani+Palace+Honolulu"><span class="ic">👑</span><span>イオラニ宮殿<small>米国唯一の王宮</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=King+Kamehameha+Statue+Honolulu"><span class="ic">🗿</span><span>カメハメハ大王像<small>記念撮影スポット</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bishop+Museum+Honolulu"><span class="ic">🏺</span><span>ビショップ博物館<small>ハワイ文化・歴史</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Polynesian+Cultural+Center"><span class="ic">🌺</span><span>ポリネシア文化センター<small>1日ショー・要予約</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honolulu+Zoo"><span class="ic">🦁</span><span>ホノルル動物園</span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Aquarium"><span class="ic">🐡</span><span>ワイキキ水族館</span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=USS+Arizona+Memorial+Pearl+Harbor"><span class="ic"></span><span>USS アリゾナ記念館<small>パールハーバー・要予約</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Battleship+Missouri+Memorial"><span class="ic"></span><span>戦艦ミズーリ記念館<small>降伏調印の地</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pearl+Harbor+Aviation+Museum"><span class="ic"></span><span>太平洋航空博物館<small>パールハーバー</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Iolani+Palace+Honolulu"><span class="ic"></span><span>イオラニ宮殿<small>米国唯一の王宮</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=King+Kamehameha+Statue+Honolulu"><span class="ic"></span><span>カメハメハ大王像<small>記念撮影スポット</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bishop+Museum+Honolulu"><span class="ic"></span><span>ビショップ博物館<small>ハワイ文化・歴史</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Polynesian+Cultural+Center"><span class="ic"></span><span>ポリネシア文化センター<small>1日ショー・要予約</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Honolulu+Zoo"><span class="ic"></span><span>ホノルル動物園</span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Aquarium"><span class="ic"></span><span>ワイキキ水族館</span></a>
       </div>
     </div>
 
     <div class="card">
       <h2 class="day">🛍 ショッピング</h2>
       <div class="spotgrid">
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ala+Moana+Center"><span class="ic">🛍</span><span>アラモアナセンター<small>巨大モール</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Royal+Hawaiian+Center+Waikiki"><span class="ic">🌴</span><span>ロイヤルハワイアンセンター<small>ワイキキ中心</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=International+Market+Place+Waikiki"><span class="ic">🏬</span><span>インターナショナルM.P.<small>食事・買い物</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Walk"><span class="ic">🛒</span><span>ワイキキビーチウォーク<small>お土産・カフェ</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ward+Village+Honolulu"><span class="ic">🎬</span><span>ワードビレッジ<small>映画館・ローカル</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Don+Quijote+Honolulu"><span class="ic">🐧</span><span>ドン・キホーテ<small>24h・お土産＆食料</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=KCC+Farmers+Market+Honolulu"><span class="ic">🥭</span><span>KCCファーマーズ<small>土曜の朝市</small></span></a>
-        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haleiwa+Town+North+Shore+Oahu"><span class="ic">🏄</span><span>ノースショア / ハレイワ<small>サーフタウン</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ala+Moana+Center"><span class="ic"></span><span>アラモアナセンター<small>巨大モール</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Royal+Hawaiian+Center+Waikiki"><span class="ic"></span><span>ロイヤルハワイアンセンター<small>ワイキキ中心</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=International+Market+Place+Waikiki"><span class="ic"></span><span>インターナショナルM.P.<small>食事・買い物</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Walk"><span class="ic"></span><span>ワイキキビーチウォーク<small>お土産・カフェ</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ward+Village+Honolulu"><span class="ic"></span><span>ワードビレッジ<small>映画館・ローカル</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Don+Quijote+Honolulu"><span class="ic"></span><span>ドン・キホーテ<small>24h・お土産＆食料</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=KCC+Farmers+Market+Honolulu"><span class="ic"></span><span>KCCファーマーズ<small>土曜の朝市</small></span></a>
+        <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Haleiwa+Town+North+Shore+Oahu"><span class="ic"></span><span>ノースショア / ハレイワ<small>サーフタウン</small></span></a>
       </div>
     </div>
   </section>
